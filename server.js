@@ -48,7 +48,7 @@ app.post('/api/generate-pdf', async (req, res) => {
         const stream = fs.createWriteStream(filepath);
         doc.pipe(stream);
 
-        doc.fontSize(24).text('Railway Track Fitting Certificate', { align: 'center' });
+        doc.fontSize(15).text('Railway Track Fitting Certificate', { align: 'center' });
         doc.moveDown();
 
         doc.fontSize(16).text('Item Details', { underline: true });
