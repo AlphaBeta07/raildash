@@ -68,9 +68,6 @@ app.post('/api/generate-pdf', async (req, res) => {
         doc.moveDown(1.5);
         doc.fontSize(12);
 
-        doc.image('Qrcode :', { continued: true }).image(` ${QRCode}`);
-        doc.moveDown(0.5);
-
         doc.text('Vendor Name:', { continued: true }).text(` ${vendorName}`);
         doc.moveDown(0.5);
 
