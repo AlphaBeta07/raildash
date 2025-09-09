@@ -1,10 +1,10 @@
+import { Users as UsersIcon } from "lucide-react";
 const express = require('express');
 const cors = require('cors');
 const PDFDocument = require('pdfkit');
 const QRCode = require('qrcode');
 const fs = require('fs');
 const path = require('path');
-const { QrCode } = require('lucide-react');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -69,7 +69,7 @@ app.post('/api/generate-pdf', async (req, res) => {
         doc.moveDown(1.5);
         doc.fontSize(12);
 
-        doc.image('Qrcode :', { continued: true }).image(` ${QrCode}`);
+        doc.image('Qrcode :', { continued: true }).image(` ${QRCode}`);
         doc.moveDown(0.5);
 
         doc.text('Vendor Name:', { continued: true }).text(` ${vendorName}`);
