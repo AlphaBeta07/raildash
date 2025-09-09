@@ -1,4 +1,3 @@
-import { Users as UsersIcon } from "lucide-react";
 const express = require('express');
 const cors = require('cors');
 const PDFDocument = require('pdfkit');
