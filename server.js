@@ -49,7 +49,7 @@ app.post('/api/generate-pdf', async (req, res) => {
         doc.pipe(stream);
 
         doc.fontSize(24).text('Railway Track Fitting Certificate', { align: 'center' });
-        doc.moveDown();
+        doc.moveDown(1.5);
 
         doc.fontSize(16).text('Item Details', { underline: true });
         doc.moveDown();
@@ -67,6 +67,7 @@ app.post('/api/generate-pdf', async (req, res) => {
 
         doc.moveDown(1.5);
         doc.fontSize(12);
+
 
         doc.text('Vendor Name:', { continued: true }).text(` ${vendorName}`);
         doc.moveDown(0.5);
