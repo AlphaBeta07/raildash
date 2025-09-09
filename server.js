@@ -56,7 +56,7 @@ app.post('/api/generate-pdf', async (req, res) => {
 
         // Generate QR code that points to the generated PDF
         const baseUrl = process.env.NODE_ENV === 'production'
-            ? `https://${process.env.RENDER_EXTERNAL_HOSTNAME || 'your-app-name.onrender.com'}`
+            ? `https://${process.env.RENDER_EXTERNAL_HOSTNAME || 'raildash.onrender.com'}`
             : `http://${HOST}:${PORT}`;
         const pdfUrl = `${baseUrl}/uploads/${filename}`;
         const qrDataUrl = await QRCode.toDataURL(pdfUrl, { width: 200, margin: 2 });
