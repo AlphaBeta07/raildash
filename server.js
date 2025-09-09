@@ -49,7 +49,7 @@ app.post('/api/generate-pdf', async (req, res) => {
         doc.pipe(stream);
 
         doc.fontSize(24).text('Railway Track Fitting Certificate', { align: 'center' });
-        doc.moveDown(1.5);
+        doc.moveDown();
 
         doc.fontSize(16).text('Item Details', { underline: true });
         doc.moveDown();
@@ -63,7 +63,7 @@ app.post('/api/generate-pdf', async (req, res) => {
         const qrImageBuffer = Buffer.from(qrDataUrl.split(',')[1], 'base64');
 
         // Embed QR code in top-right corner
-        doc.image(qrImageBuffer, doc.page.width - 150, 50, { width: 100, height: 100 });
+        doc.image(qrImageBuffer, doc.page.width - 150, 50, { width: 50, height: 50 });
 
         doc.moveDown(1.5);
         doc.fontSize(12);
